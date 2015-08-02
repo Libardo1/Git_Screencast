@@ -2,9 +2,9 @@
 \usepackage{amsmath,authblk,hyperref}
 \title{Version Control with the Git Command Line Application $\mu$-Tutorial}
 \author[1,2,3]{Ben R. Fitzpatrick, PhD Candidate}
-\affil[1]{\small Bayesian Research \& Applications Group, Mathematical Sciences School, Queensland University of Technology (QUT)}
-\affil[2]{\small Cooperative Research Centre for Spatial Information, Victoria}
-\affil[3]{\small Austrailan Research Council Centre of Excellence in Mathematical Statistical Frontier for Big Data, Big Models and New Insights (ACEMS)}
+\affil[1]{\small Bayesian Research \& Applications Group, Mathematical Sciences School, Queensland University of Technology (QUT), Brisbane, Queensland, Australia}
+\affil[2]{\small Cooperative Research Centre for Spatial Information, Carlton, Victoria, Australia}
+\affil[3]{\small Australian Research Council Centre of Excellence in Mathematical and Statistical Frontier for Big Data, Big Models and New Insights (ACEMS)}
 \begin{document}
 \maketitle
 
@@ -54,16 +54,14 @@ Furthermore, if you find this micro-tutorial helpful I have written a longer tut
 Today I'll demonstrate the simple workflow of creating a local clone of a remote repository, making changes to your local clone then pushing those changes to the remote to bring it up to date with your local version.
 \end{dialogue}
 
-Switch to terminal and demo git clone commit push
-
 \begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} If you would like to follow along with the tutorial on your computer please ensure you have the Git command line application installed.  Installation instructions for MacOS, Microsoft Windows are various GNU plus Linux distributions are given at the beginning of the slides for my full Git tutorial.
 \end{dialogue} 
 
 \begin{dialogue}[switching tabs to \url{www.github.com}]{Narrator}
-To follow along with this tutorial you will also need to have created an account on either GitHub or BitBucket.
+To follow along with this tutorial you will also need to have created an account on either GitHub or BitBucket.  Once you have the Git command line application installed and have created a GitHub (or BitBucket) account you are ready to proceed with this tutorial.
 \end{dialogue}
 
-\begin{dialogue}[Signing into GitHub \& Creating a Repository]{Narrator} Open your web browser and navigate to the GitHub (or BitBucket) page and sign in.
+\begin{dialogue}[Signing into GitHub \& Creating a Repository]{Narrator} Please open your web browser and navigate to the GitHub (or BitBucket) page and sign in.
 \newline
 \newline
 Create a new repository.
@@ -75,73 +73,160 @@ Choose whether to make this repository Public or Private.
 Initialize the repository with a Readme document to contain instructions for your users.
 \newline
 \newline
-Choose a liscence to govern use and distribution of the materials contained in the repository.
-You may find GitHub's summaries of the various liscences it includes by default useful here.
+Choose a licence to govern use and distribution of the materials contained in the repository.
+You may find GitHub's summaries of the various licences it includes by default useful here.
 \newline
 \newline
 Click the green `Create' button to create your repository on the GitHub servers.
 \end{dialogue}
 
-\begin{dialogue}[Copy the HTTPS clone URL]{Narrator}
-At the bottom right of the GitHub page for your new repository you will find the a button to copy the URLs to clone you repository to you computer's hard drive via HTTPS, SSH and Subversion.
-\newline
-\newline
-Click the hyperlink titled `HTTPS' then click the `Copy to Clipboard' button'.
-\end{dialogue}
+
 
 \begin{dialogue}[Opening a terminal]{Narrator}
 Open a command line interface.
 \newline
 \newline
-On Windows open the `Start' Menu, choose `Program' then open the `PowerShell' program.
+On Windows open the `Start' Menu, choose `Programs' then open the `PowerShell' program.
 \newline
 \newline
-On MacOS open the `Finder' and search your `Applications' for the `Terminal' and open this.
+On MacOS open the `Finder' and search your `Applications' for the `Terminal' application and open this.
 \newline
 \newline
-GNU plus Linux users, this will vary a little from distribution to distribution but you should all be able to open the `Terminal' application from your applications list.
+GNU plus Linux users, this will vary a little from distribution to distribution but you should all be able to open the `Terminal' application from your applications launcher.
 \end{dialogue}
 
+\begin{dialogue}[Types \texttt{ cd ~/home/ben/Demos/ } ]{Narrator}
+First we need to change the working directory for the command line to the folder in our file structure where we would like our local clone of the repository to be stored as a folder under the control of the Git version control system.
+\end{dialogue}
 
-
-\begin{dialogue} This concludes the demonstration.
+\begin{dialogue}[Switches to Web browser \& copies clone address]{Narrator}
+Now we a ready to create a local clone of our repository.  
+This will be copy of the repository on the hard drive of the computer we are using now.  
+To do this we need the clone address from the page for our repository on the GitHub (or BitBucket) website which we copy to our clipboard.  
+The simplest option here is to use the HTTPS clone address (to clone, surprise surprise, over HTTPS).
+At the bottom right of the GitHub page for your new repository you will find the button to copy the URLs to clone your repository to you computer's hard drive via HTTPS, SSH and Subversion (these URLs are also displayed on each BitBucket page for a repository hosted on that service).
 \newline
 \newline
-Hopefully you now understand the basics of version control with the Git command line application and local and remote versions of a repository. % summarise key learning points
+On GitHub, please click the hyperlink titled `HTTPS' then click the `Copy to Clipboard' button.
+\end{dialogue}
+
+\begin{dialogue}[Types \texttt{ git clone ...}]{Narrator}
+The command to clone a remote repository to the hard drive of the computer you are using is \textit{git clone} and we need to provide git with the address from which to clone the repository so we paste that in from the clipboard to complete the command then press the \textbf{Enter} or \textbf{Return} key to execute the command.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{ls} ]{Narrator}
+Now if we list the contents of the current working directory we can see the folder for our repository which Git has just created.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{cd Repo Name} then \texttt{ls} ]{Narrator}
+If we change into this directory and list the contents we can see these are the same as the contents of the repository on the server, complete with the README and Licence documents.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{touch My\_R\_Script.R}]{Narrator}
+We can then add files to this folder either on the command line, through your file browser or with other file authoring software.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{emacs -nw My\_R\_Script.R} making some changes and saving the file.]{Narrator}
+We can then edit these files as we normally would and save the changes.  I'm using Emacs here but please feel free to use whatever software you usually use to authro scripts to create a file in the version controlled directory, edit the contents of this file and save it.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status}]{Narrator}
+However, until we specify that we wish to run version control on these files git will ignore them, listing them only as untracked files
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git add My\_R\_Script.R}]{Narrator}
+The first step in the process of adding a file to the list of version controlled files in a repository is to \textit{stage} that file for an initial \textit{commit} to the repository.  We do this this with the \textit{git add} command.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status}]{Narrator}
+We have now staged the current state of our file to be stored in our repository at our next commit.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{cp /home/ben/GitHub\_Repos/git\_demo/acems\_brag\_ascii\_art.txt  acems\_brag\_ascii\_art.txt}]{Narrator}
+We can also copy existing files into the folder for our repository.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git add acems\_brag\_ascii\_art.txt}]{Narrator}
+We then stage these files to be committed with the \textit{git add} command as before. 
+\end{dialogue}
+
+\begin{dialogue}{Narrator}
+We are now ready to perform a commit with the \textit{git commit} command.  Think of commits as snapshots of the current state of the files you are version controlling.  As we have not committed these files to this repository before this will be the initial snapshot of them Git will store for us.  Provided we don't do anything particularly drastic we should always be able to `checkout' this version of these files from the Git version control system at a later date. Checking out a commit can be thought of as a bit like borrowing a copy of that snapshot of those files from the library which is the version control system.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git commit -m 'Initial Commit of Script and Art'}]{Narrator}
+We perform the commit with the \textit{git commit} command appending a short description of the changes to the file we are commiting to our record of the history of authoring this file.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status} then switching to the web browser and refreshing the repository page]{Narrator}
+With this commit to our local clone of the repository we have advanced our local clone ahead of the master copy on the GitHub (or BitBucket) servers. As you can see our new files are not present on the master version of this repository on the servers.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git push}]{Narrator}
+We use the command \textit{git push} to `push' our changes to the remote copy of the repository on the GitHub (or BitBucket) servers bringing this copy up to date with our local copy.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status}]{Narrator}
+Querying the status of our repository will now inform us that our local and remote copies of the repository are up to date with one another.
+\end{dialogue}
+
+\begin{dialogue}[switching to the web browser and refreshing the repository page]{Narrator}
+We can also see the new files listed on the page for the repository.
+\end{dialogue}
+
+\begin{dialogue}[]{Narrator}
+Every time you make changes to a file which you would like to keep a record of you will need to stage that modified file for a commit, conduct the commit then push this commit to the remote server.  Let's practise that once more by modifying one of our version controlled files.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{emacs -nw My\_R\_Script.R} making some changes and saving the file.]{Narrator}
+Let's now edit our previously committed version of the file `My\_R\_Script.R' and save the changes. (Again, I'm using Emacs here but please feel free to use whatever software you usually use for script authoring to edit your version controlled file).
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status}]{Narrator}
+Querying the status of our repository informs us we have made uncommitted changes to the file `My\_R\_Script.R'.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git add My\_R\_Script.R}]{Narrator}
+So let's stage these changes to be committed,
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git commit -m 'an informative message about what I changed'}]{Narrator}
+and make the commit typing a brief commit message describing what we changed in this commit.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git push}]{Narrator}
+Finally, we push these changes to the remote copy of the repository.
+\end{dialogue}
+
+\begin{dialogue}[Typing \texttt{git status} then switching to the web browser and refreshing the repository page]{Narrator}
+We can now see these changes have been stored on the master branch of the repository on the remote server.
+\end{dialogue}
+
+\begin{dialogue}{Narrator}
+Hopefully you now understand the basics of version control with the Git command line application using local and remote versions of a repository. % summarise key learning points
+To summarise, today we have created a repository on a remote server, cloned that repository to the hard drives of our computers, added files to these local repositories, staged these files for a commit, conducted the commit and pushed the commit to the remote version of the repository to bring it up to date with the local version.
 \end{dialogue}
 
 \begin{dialogue}[joking \& switching to \url{http://git-scm.com/downloads/guis}]{Narrator}
-If you are writing code and yet are averse to using a command line interface numerous Graphical User Interfaces to the Git version control system exist.
+If you are writing code and yet retain an aversion to using a command line interface numerous Graphical User Interfaces to the Git version control system exist for many common operating systems.
 \newline
 \newline
-Of particular note are the clients from GitHub and Atlassian (the provider of BitBucket).
+I've heard good things about the free clients from GitHub and Atlassian (the provider of BitBucket) both of which have comforting buttons and drop down menus.
+While Git GUIs will not be featured in this micro-tutorial, they are extremely well documented online so if you have grasped the basic concepts of Git from this tutorial migrating to using Git via a GUI should pose little challenge.
 \end{dialogue}
 
-\begin{dialogue}[sign off, switching back to \url{http://git-scm.com}]{Narrator}
+\begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} 
+If you decide to continue using the command line application for Git, you may find the freely available slides for my longer tutorial on version control with Git and GitHub useful.
+\end{dialogue}
+
+\begin{dialogue}[switching tabs to \url{http://git-scm.com/book/en/v2}]{Narrator} 
+The official documentation to the git command line application is also excellent.
+\end{dialogue}
+
+\begin{dialogue}[switching back to \url{http://git-scm.com}]{Narrator}
+This concludes the micro - tutorial.
 Thanks for watching, my name is Ben Fitzpatrick and with Git `everything is local'.
 \end{dialogue}
-
-
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
-
-%\begin{dialogue}{Narrator}  \end{dialogue}
 
 \fadeout
 \theend
