@@ -127,7 +127,7 @@ We can then add files to this folder either on the command line, through your fi
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{emacs -nw My\_R\_Script.R} making some changes and saving the file.]{Narrator}
-We can then edit these files as we normally would and save the changes.  I'm using Emacs here but please feel free to use whatever software you usually use to authro scripts to create a file in the version controlled directory, edit the contents of this file and save it.
+We can then edit these files as we normally would and save the changes.  I'm using Emacs here but please feel free to use whatever software you usually use to author scripts to create a file in the version controlled directory, edit the contents of this file and save it.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git status}]{Narrator}
@@ -142,7 +142,7 @@ The first step in the process of adding a file to the list of version controlled
 We have now staged the current state of our file to be stored in our repository at our next commit.
 \end{dialogue}
 
-\begin{dialogue}[Typing \texttt{cp /home/ben/GitHub\_Repos/git\_demo/acems\_brag\_ascii\_art.txt  acems\_brag\_ascii\_art.txt}]{Narrator}
+\begin{dialogue}[Typing \texttt{cp /home/ben/GitHub\_Repos/git\_demo/acems\_brag\_ascii\_art.txt  acems\_brag\_ascii\_art.txt} then \texttt{ls}]{Narrator}
 We can also copy existing files into the folder for our repository.
 \end{dialogue}
 
@@ -163,7 +163,7 @@ With this commit to our local clone of the repository we have advanced our local
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git push}]{Narrator}
-We use the command \textit{git push} to `push' our changes to the remote copy of the repository on the GitHub (or BitBucket) servers bringing this copy up to date with our local copy.
+We use the command \textit{git push} to `push' our changes to the remote copy of the repository on the GitHub (or BitBucket) servers bringing this copy up to date with our local copy.  You will be prompted to input your GitHub (or BitBucket) username and password here, please do so.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git status}]{Narrator}
@@ -204,15 +204,23 @@ We can now see these changes have been stored on the master branch of the reposi
 
 \begin{dialogue}{Narrator}
 Hopefully you now understand the basics of version control with the Git command line application using local and remote versions of a repository. % summarise key learning points
-To summarise, today we have created a repository on a remote server, cloned that repository to the hard drives of our computers, added files to these local repositories, staged these files for a commit, conducted the commit and pushed the commit to the remote version of the repository to bring it up to date with the local version.
+To summarise, today we have: \begin{enumerate} 
+\item created a repository on a remote server to store our version controled files within, 
+\item cloned that repository to the hard drives of our computers to have a local copy to work on, 
+\item added files to these local repositories, 
+\item staged these files for a commit to the version controlled record of the modifications of these files,
+\item conducted the commit to initiate the storage of this stage in the files history within the version control system,
+\item and pushed the commit to the remote version of the repository to bring it up to date with the local version.
+\end{enumerate}
+We then edited one of these files and staged this modified file for a commit, committed it to the repository and pushed our commit to the remote copy of the repository.
 \end{dialogue}
 
 \begin{dialogue}[joking \& switching to \url{http://git-scm.com/downloads/guis}]{Narrator}
 If you are writing code and yet retain an aversion to using a command line interface numerous Graphical User Interfaces to the Git version control system exist for many common operating systems.
 \newline
 \newline
-I've heard good things about the free clients from GitHub and Atlassian (the provider of BitBucket) both of which have comforting buttons and drop down menus.
-While Git GUIs will not be featured in this micro-tutorial, they are extremely well documented online so if you have grasped the basic concepts of Git from this tutorial migrating to using Git via a GUI should pose little challenge.
+I've heard good things about the free clients from GitHub and Atlassian (the provider of BitBucket) both of which feature comforting buttons and drop down menus.
+While Git GUIs will not be featured in this micro-tutorial, as we're almost out of time, they are extremely well documented online so if you have grasped the basic concepts of Git from this tutorial migrating to using Git via a GUI should pose little challenge.
 \end{dialogue}
 
 \begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} 
