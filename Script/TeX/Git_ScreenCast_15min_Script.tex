@@ -17,9 +17,13 @@ Switching tabs to \url{https://bragqut.wordpress.com/} and mousing over the Memb
 
 \begin{dialogue}{Narrator} My name is Ben Fitzpatrick and I'm PhD Student in QUT's Bayesian Research and Applications Group. \end{dialogue}
 
+Switching tabs to \url{http://www.crcsi.com.au/}
+
+\begin{dialogue}{Narrator} I am also a student member of the PhD program of the Australian Research Council Cooperative Research Centre for Spatial Information \end{dialogue}
+
 Switching tabs to \url{http://acems.org.au/}
 
-\begin{dialogue}{Narrator} I am also aligned with the Australian Research Council Centre of Excellence for Mathematical and Statistical Frontiers in Big Data, Big Models and New Insights. \end{dialogue}
+\begin{dialogue}{Narrator} Finally, I am also aligned with the Australian Research Council Centre of Excellence for Mathematical and Statistical Frontiers in Big Data, Big Models and New Insights. \end{dialogue}
 
 Switching tabs to \url{www.git-scm.com}
 
@@ -43,7 +47,7 @@ There is an entire book available on Git,
 \end{dialogue}
 
 \begin{dialogue}[switching tabs to \url{https://help.github.com/}]{Narrator} 
-and the GitHub help page is also excellent.
+and the GitHub help site is also excellent.
 \end{dialogue}
 
 \begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} 
@@ -51,52 +55,43 @@ Furthermore, if you find this micro-tutorial helpful I have written a longer tut
 \end{dialogue}
 
 \begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/}]{Narrator} 
-Today I'll demonstrate the simple workflow of creating a local clone of a remote repository, making changes to your local clone then pushing those changes to the remote to bring it up to date with your local version.
+
+Today I'll demonstrate the simple workflow of creating a remote repository on the GitHub servers, creating a local clone of that remote repository on the hard drive of the computer I'm using, making changes to the files stored in this local clone then pushing these changes to the remote repository to bring it up to date with the local version.
 \end{dialogue}
 
-\begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} If you would like to follow along with the tutorial on your computer please ensure you have the Git command line application installed.  Installation instructions for MacOS, Microsoft Windows are various GNU plus Linux distributions are given at the beginning of the slides for my full Git tutorial.
+\begin{dialogue}[switching tabs to \url{https://github.com/brfitzpatrick/Intro_to_R/blob/master/VC_with_GitHub.pdf}]{Narrator} If you would like to follow along with the tutorial on your computer please ensure you have the Git command line application installed.  Installation instructions for the Macintosh Operating System, Microsoft Windows are various GNU plus Linux distributions are given at the beginning of the slides for my full Git tutorial.
 \end{dialogue} 
 
 \begin{dialogue}[switching tabs to \url{www.github.com}]{Narrator}
 To follow along with this tutorial you will also need to have created an account on either GitHub or BitBucket.  Once you have the Git command line application installed and have created a GitHub (or BitBucket) account you are ready to proceed with this tutorial.
 \end{dialogue}
 
-\begin{dialogue}[Signing into GitHub \& Creating a Repository]{Narrator} Please open your web browser and navigate to the GitHub (or BitBucket) page and sign in.
-\newline
-\newline
-Create a new repository.
-\newline
-\newline
-Choose whether to make this repository Public or Private.
-\newline
-\newline
-Initialize the repository with a Readme document to contain instructions for your users.
-\newline
-\newline
-Choose a licence to govern use and distribution of the materials contained in the repository.
-You may find GitHub's summaries of the various licences it includes by default useful here.
-\newline
-\newline
-Click the green `Create' button to create your repository on the GitHub servers.
+\begin{dialogue}[Signing into GitHub \& Creating a Repository]{Narrator} Let's begin: \begin{enumerate}
+\item Please open your web browser, navigate to the GitHub (or BitBucket) page and sign in
+\item From the `Repositories' tab please click the green `New' button to create a new repository.
+\item Choose whether to make this repository Public or Private.
+\item Initialize the repository with a Readme document to contain instructions for your users.
+\item Choose a licence to govern use and distribution of the materials contained in the repository.
+\item You may find GitHub's summaries of the various licences it includes by default useful here.
+\item Click the green `Create' button to create your repository on the GitHub servers.
+\end{enumerate}
 \end{dialogue}
 
-
-
 \begin{dialogue}[Opening a terminal]{Narrator}
-Open a command line interface.
+Please open a command line interface.
 \newline
 \newline
-On Windows open the `Start' Menu, choose `Programs' then open the `PowerShell' program.
+To do this on Microsoft Windows please open the `Start' Menu (or its analogue), choose `Programs' then open the `PowerShell' program.
 \newline
 \newline
-On MacOS open the `Finder' and search your `Applications' for the `Terminal' application and open this.
+To do this on the Macintosh Operating System please open the `Finder' and search your `Applications' for the `Terminal' application then open this application.
 \newline
 \newline
-GNU plus Linux users, this will vary a little from distribution to distribution but you should all be able to open the `Terminal' application from your applications launcher.
+GNU plus Linux users, this will vary a little from distribution to distribution but you should all be able to open a `Terminal' application from your applications launcher.
 \end{dialogue}
 
 \begin{dialogue}[Types \texttt{ cd ~/home/ben/Demos/ } ]{Narrator}
-First we need to change the working directory for the command line to the folder in our file structure where we would like our local clone of the repository to be stored as a folder under the control of the Git version control system.
+Firstly, we need to change the working directory that the command line is currently visiting to the folder in our file structure where we would like our local clone of the repository to be stored.
 \end{dialogue}
 
 \begin{dialogue}[Switches to Web browser \& copies clone address]{Narrator}
@@ -127,11 +122,11 @@ We can then add files to this folder either on the command line, through your fi
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{emacs -nw My\_R\_Script.R} making some changes and saving the file.]{Narrator}
-We can then edit these files as we normally would and save the changes.  I'm using Emacs here but please feel free to use whatever software you usually use to author scripts to create a file in the version controlled directory, edit the contents of this file and save it.
+We can then edit these files as we normally would and save the changes.  I'm using Emacs here but please feel free to use whatever software you usually use to author scripts to create a file in the version controlled directory, edit the contents of this file and save these changes to the file.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git status}]{Narrator}
-However, until we specify that we wish to run version control on these files git will ignore them, listing them only as untracked files
+However, until we specify that we wish to run version control on this file Git will ignore it, listing it only as an untracked file within the version controlled directory.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git add My\_R\_Script.R}]{Narrator}
@@ -151,19 +146,19 @@ We then stage these files to be committed with the \textit{git add} command as b
 \end{dialogue}
 
 \begin{dialogue}{Narrator}
-We are now ready to perform a commit with the \textit{git commit} command.  Think of commits as snapshots of the current state of the files you are version controlling.  As we have not committed these files to this repository before this will be the initial snapshot of them Git will store for us.  Provided we don't do anything particularly drastic we should always be able to `checkout' this version of these files from the Git version control system at a later date. Checking out a commit can be thought of as a bit like borrowing a copy of that snapshot of those files from the library which is the version control system.
+We are now ready to perform a commit with the \textit{git commit} command.  Think of commits as snapshots of the current state of the files you are version controlling. These snapshots are recorded in an indexed database for this repository. As we have not committed these files to this repository before this will be the initial snapshot of them that Git will store for us.  Provided we don't do anything particularly drastic we should always be able to `checkout' this version of these files from the Git version control system at a later date. Checking out a commit can be thought of as a bit like borrowing a copy of that particular snapshot of those files from the library of these snapshots contained within the version control system.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git commit -m 'Initial Commit of Script and Art'}]{Narrator}
-We perform the commit with the \textit{git commit} command appending a short description of the changes to the file we are commiting to our record of the history of authoring this file.
+We perform the commit with the \textit{git commit} command appending a short description of the changes to the files we are commiting to our record of the history of authoring these files.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git status} then switching to the web browser and refreshing the repository page]{Narrator}
-With this commit to our local clone of the repository we have advanced our local clone ahead of the master copy on the GitHub (or BitBucket) servers. As you can see our new files are not present on the master version of this repository on the servers.
+With this commit to our local clone of the repository we have advanced our local clone of the repository ahead of the master version of this repository on the GitHub (or BitBucket) servers. As you can see our new files are not present on the master version of this repository on the servers.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git push}]{Narrator}
-We use the command \textit{git push} to `push' our changes to the remote copy of the repository on the GitHub (or BitBucket) servers bringing this copy up to date with our local copy.  You will be prompted to input your GitHub (or BitBucket) username and password here, please do so.
+We use the command \textit{git push} to `push' our changes to the remote master version of the repository on the GitHub (or BitBucket) servers bringing this version up to date with our local clone.  You will be prompted to input your GitHub (or BitBucket) username and password here, please do so.
 \end{dialogue}
 
 \begin{dialogue}[Typing \texttt{git status}]{Narrator}
@@ -171,7 +166,7 @@ Querying the status of our repository will now inform us that our local and remo
 \end{dialogue}
 
 \begin{dialogue}[switching to the web browser and refreshing the repository page]{Narrator}
-We can also see the new files listed on the page for the repository.
+We can now also see the new files listed on the page for the repository.
 \end{dialogue}
 
 \begin{dialogue}[]{Narrator}
@@ -206,10 +201,10 @@ We can now see these changes have been stored on the master branch of the reposi
 Hopefully you now understand the basics of version control with the Git command line application using local and remote versions of a repository. % summarise key learning points
 To summarise, today we have: \begin{enumerate} 
 \item created a repository on a remote server to store our version controled files within, 
-\item cloned that repository to the hard drives of our computers to have a local copy to work on, 
+\item cloned that repository to the hard drives of our computers to have a local copy of the version controlled files to work on, 
 \item added files to these local repositories, 
-\item staged these files for a commit to the version controlled record of the modifications of these files,
-\item conducted the commit to initiate the storage of this stage in the files history within the version control system,
+\item staged these files for a commit to the version controlled record of the modifications to the contents of this repository,
+\item conducted the commit to initiate the storage of a snapshot of this stage in the files' history within the version control system,
 \item and pushed the commit to the remote version of the repository to bring it up to date with the local version.
 \end{enumerate}
 We then edited one of these files and staged this modified file for a commit, committed it to the repository and pushed our commit to the remote copy of the repository.
@@ -228,7 +223,7 @@ If you decide to continue using the command line application for Git, you may fi
 \end{dialogue}
 
 \begin{dialogue}[switching tabs to \url{http://git-scm.com/book/en/v2}]{Narrator} 
-The official documentation to the git command line application is also excellent.
+The official documentation of the Git command line application is also excellent.
 \end{dialogue}
 
 \begin{dialogue}[switching back to \url{http://git-scm.com}]{Narrator}
