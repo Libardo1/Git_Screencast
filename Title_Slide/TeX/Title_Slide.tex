@@ -1,0 +1,74 @@
+\documentclass[xcolor=dvipsnames]{beamer} 
+\usecolortheme[named=Blue]{structure} 
+\usetheme[height=10.5mm]{Rochester} 
+\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+\setbeamertemplate{navigation symbols}{} 
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{upquote}
+\usepackage[absolute,overlay]{textpos}
+\newenvironment{reference}[2]{%
+  \begin{textblock*}{\textwidth}(#1,#2)
+      \footnotesize\it\bgroup\color{red!50!black}}{\egroup\end{textblock*}}
+\graphicspath{ {/home/ben/Git_Screencast/Title_Slide/Images/} }
+\begin{document}
+\begin{frame}
+\begin{center}
+\textbf{\huge Git with Remotes}
+\end{center}
+\textbf{\small An Introduction to Version Control with the Git Command Line Application}
+
+\begin{figure}
+
+\begin{columns}
+
+\begin{column}{3.3cm}
+\begin{center}
+\begin{figure}
+\includegraphics[width = \textwidth]{QUT_Logo.png}
+\end{figure}
+\end{center}
+\end{column} 
+
+\begin{column}{3.3cm}
+\begin{center}
+\begin{figure}
+\includegraphics[width = \textwidth]{ACEMS_Logo.png}
+\end{figure}
+\end{center}
+\end{column} 
+
+\begin{column}{3.3cm}
+\begin{center}
+\begin{figure}
+\includegraphics[width = \textwidth]{BRAG_Logo.png}
+\end{figure}
+\end{center}
+\end{column} 
+
+\end{columns}
+\end{figure}
+
+\small Ben R. Fitzpatrick\\
+\tiny PhD Candidate, Statistical Science, Mathematical Sciences School, Queensland University of Technology
+\newline
+\begin{columns}
+\begin{column}{3cm}
+\tiny 0000-0003-1916-0939
+\end{column}
+\begin{column}{3cm}
+\tiny github.com/brfitzpatrick/
+\end{column}
+\begin{column}{3cm}
+\tiny @benrfitzpatrick
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
